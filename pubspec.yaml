@@ -1,0 +1,76 @@
+name: luckystone
+description: "Lucky Stone - online jewellery shopping app (gold, diamond, silver & platinum)."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management (bloc / cubit)
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+  formz: ^0.4.0
+
+  # Networking & storage
+  dio: ^5.7.0
+  shared_preferences: ^2.3.1
+  internet_connection_checker: ^1.0.0+1
+
+  # Navigation
+  fluro: ^2.0.5
+
+  # UI
+  fluttertoast: ^8.2.7
+  flutter_svg: ^2.2.3
+  flutter_screenutil: ^5.9.3
+  cached_network_image: ^3.4.1
+  carousel_slider: ^5.1.2
+  intl: ^0.20.2
+
+  # Utilities
+  url_launcher: ^6.3.1
+  share_plus: ^11.0.0
+  image_picker: ^1.1.1
+
+  # Biometric (fingerprint / Face ID) login
+  local_auth: ^3.0.2
+  flutter_secure_storage: ^10.3.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: ProductSans
+      fonts:
+        - asset: assets/fonts/ProductSans-Regular.ttf
+          weight: 400
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
