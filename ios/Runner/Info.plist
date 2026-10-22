@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>Lucky Stone connects to the store server on your local Wi-Fi network.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Use Face ID to log in to Lucky Stone quickly and securely.</string>
 	<key>CFBundleDisplayName</key>

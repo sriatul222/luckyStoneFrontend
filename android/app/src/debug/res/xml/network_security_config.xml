@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Debug builds: http to any host (whatever IP config/dev.json points to).
-     Replaces main/res/xml/network_security_config.xml in debug builds only. -->
-<network-security-config>
-    <base-config cleartextTrafficPermitted="true" />
-</network-security-config>

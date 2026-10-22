@@ -35,40 +35,20 @@ After login, save the token with `AppPreferences.shared.saveLogin(token)`. ApiHa
 
 ## Run
 
-1. Start the backend: `cd ~/PythonProject/LuckyStoneBackend && source .venv/bin/activate && python main.py`
+The app talks only to the backend deployed on Render (https). The address is in
+`lib/api/urls.dart`:
+
+```dart
+static const String appBaseURL = 'https://luckystonebackend.onrender.com/';
+```
+
+1. Deploy the backend to Render (see the backend README) and put its URL from the Render
+   dashboard in `appBaseURL`.
 2. `flutter pub get`
-3. `flutter run`
-   - Android emulator uses `http://10.0.2.2:8000/` automatically
-   - iOS simulator uses `http://127.0.0.1:8000/`
+3. `flutter run` (or `flutter build apk --release`)
 
-### Real phone
-
-On a phone `127.0.0.1` is the phone itself, so the app must call your Mac's Wi-Fi IP. The phone and
-the Mac must be on the same Wi-Fi.
-
-1. Find the Mac's IP: `ipconfig getifaddr en0`
-2. Put it in `config/dev.json` (copy `config/dev.example.json`; the file is git-ignored):
-   `{ "API_BASE_URL": "http://<mac-ip>:8000/" }`
-3. Run with it: `flutter run --dart-define-from-file=config/dev.json`
-   (Android Studio: pick the **main.dart (real phone)** run configuration)
-4. **Release builds on Android** only allow http to the hosts in
-   `android/app/src/main/res/xml/network_security_config.xml`. Put the same IP there.
-   Debug builds allow http to any host.
-5. **iPhone**: tap **Allow** when asked to connect to devices on your local network
-   (or Settings → Privacy & Security → Local Network → Lucky Stone).
-
-When the Mac's IP changes, update steps 2 and 4.
-
-### Backend on Render (any network)
-
-When the backend is deployed to Render (see the backend README), the app uses its https URL from
-`config/prod.json` (update it if Render gives your service a different address):
-
-- Run: `flutter run --dart-define-from-file=config/prod.json`
-  (Android Studio: **main.dart (Render server)** run configuration)
-- Release APK: `flutter build apk --release --dart-define-from-file=config/prod.json`
-- No Mac IP, VPN or http exceptions needed. A free Render service sleeps after 15 minutes idle,
-  so the first request afterwards can take up to a minute.
+Works on the emulator, simulator and real phones on any network. A free Render service sleeps
+after 15 minutes idle, so the first request afterwards can take up to a minute.
 
 ## Notes
 

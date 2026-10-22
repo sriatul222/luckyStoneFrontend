@@ -31,6 +31,9 @@ class ProductDetailsForm extends StatelessWidget {
         if (state.buyNow) {
           Navigator.pushNamed(context, RoutesName.cart);
         } else {
+          // The snackbar stays on screen after this page is closed, when this
+          // page's context no longer works, so keep the app's navigator.
+          final navigator = Navigator.of(context);
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -43,8 +46,7 @@ class ProductDetailsForm extends StatelessWidget {
                 action: SnackBarAction(
                   label: 'VIEW BAG',
                   textColor: MyColor.gold,
-                  onPressed: () =>
-                      Navigator.pushNamed(context, RoutesName.cart),
+                  onPressed: () => navigator.pushNamed(RoutesName.cart),
                 ),
               ),
             );

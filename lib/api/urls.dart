@@ -1,24 +1,8 @@
-import 'package:flutter/foundation.dart';
-
-// atul asl backend = LuckyStoneBackend (FastAPI). Start it with `python main.py`.
-//
-// Local URLs:
-//   Android emulator -> http://10.0.2.2:8000/  (10.0.2.2 is your Mac's localhost)
-//   iOS simulator/web -> http://127.0.0.1:8000/
-//   Real phone        -> your Mac's Wi-Fi IP from config/dev.json:
-//                        flutter run --dart-define-from-file=config/dev.json
-//                        (see README "Real phone")
-//   Render (online)   -> https URL from config/prod.json, works on any network:
-//                        flutter run --dart-define-from-file=config/prod.json
+// atul asl backend = LuckyStoneBackend (FastAPI) deployed on Render.
 
 class AppURLs {
-  static const String _baseUrlOverride = String.fromEnvironment('API_BASE_URL');
-
-  static final String appBaseURL = _baseUrlOverride.isNotEmpty
-      ? _baseUrlOverride
-      : (!kIsWeb && defaultTargetPlatform == TargetPlatform.android)
-          ? 'http://10.0.2.2:8000/'
-          : 'http://127.0.0.1:8000/';
+  // Render dashboard -> your service -> URL shown at the top
+  static const String appBaseURL = 'https://luckystonebackend.onrender.com/';
 
   static final String apiURL = '${appBaseURL}api/v1/';
 

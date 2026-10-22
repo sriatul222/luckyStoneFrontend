@@ -43,6 +43,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-# Dev API address for real phones (your Mac's Wi-Fi IP). Copy config/dev.example.json.
-/config/dev.json
